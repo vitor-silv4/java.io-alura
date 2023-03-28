@@ -1,0 +1,24 @@
+package br.com.alura.java.io.teste;
+
+import java.io.File;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class TesteMeu {
+
+	public static void main(String[] args) throws Exception {
+		Scanner scanner = new Scanner(new File("contas.txt"));
+
+		while (scanner.hasNextLine()) {
+			String linha = scanner.nextLine();
+
+			Scanner linhaScanner = new Scanner(linha);
+			linhaScanner.useLocale(Locale.US);
+//			linhaScanner.useDelimiter(",");
+
+			String x = linhaScanner.next();
+			
+			System.out.println(x);
+		}
+	}
+}
